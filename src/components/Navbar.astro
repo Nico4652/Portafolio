@@ -1,0 +1,186 @@
+---
+const links = [
+  { href: '#inicio', label: 'Inicio', section: 'inicio' },
+  { href: '#sobre-mi', label: 'Sobre mí', section: 'sobre-mi' },
+  { href: '#tecnologias', label: 'Tecnologías', section: 'tecnologias' },
+  { href: '#proyectos', label: 'Proyectos', section: 'proyectos' },
+  { href: '#contacto', label: 'Contacto', section: 'contacto' },
+];
+---
+
+<nav class="fixed z-50 top-6 inset-x-0 mx-auto w-[92%] max-w-4xl rounded-2xl border border-white/10 backdrop-blur-xl bg-[#000214]/70 shadow-[0_12px_40px_rgba(0,0,0,0.6)] px-4 py-3 lg:py-2 transition-all duration-300">
+  <div class="flex items-center justify-between relative">
+    <!-- Logo/Brand -->
+    <div class="shrink-0 z-10 pl-2">
+      <span class="text-xl font-bold tracking-wider gradient-text animated-gradient select-none">
+        Backend Developer
+      </span>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden lg:flex items-center relative py-1 px-1 bg-white/5 rounded-xl border border-white/5">
+      <div class="flex items-center space-x-1 relative">
+        {links.map(link => (
+          <a 
+            href={link.href} 
+            class="nav-link relative text-sm font-medium text-white/70 hover:text-white hover:bg-white/5 transition-all duration-300 px-4 py-2 rounded-lg select-none z-10"
+            data-section={link.section}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Right button (Desktop) -->
+    <!-- <div class="hidden lg:block z-10 pr-2">
+      <a href="#contacto" class="btn-primary py-2 px-5 text-xs font-semibold tracking-wide cursor-pointer inline-block">
+        Contactarme
+      </a>
+    </div> -->
+
+    <!-- Mobile menu button -->
+    <div class="flex items-center lg:hidden z-10">
+      <button 
+        id="mobile-menu-button" 
+        class="rounded-xl p-2.5 inline-flex items-center justify-center hover:bg-white/10 text-white/80 hover:text-white focus:outline-none transition-all duration-200 cursor-pointer" 
+        aria-controls="mobile-menu" 
+        aria-expanded="false"
+      >
+        <span class="sr-only">Abrir menú principal</span>
+        <svg id="hamburger-icon" class="block h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="close-icon" class="hidden h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Overlay Menu -->
+  <div 
+    id="mobile-menu" 
+    class="fixed inset-0 top-[88px] left-0 w-full h-[calc(100vh-88px)] bg-black/90 backdrop-blur-2xl border-t border-white/5 p-6 flex flex-col justify-between hidden opacity-0 transition-all duration-300"
+  >
+    <div class="flex flex-col space-y-6 pt-8">
+      {links.map((link, idx) => (
+        <a 
+          href={link.href} 
+          class="mobile-nav-link text-2xl font-semibold tracking-wide text-white/70 hover:text-white transition-all duration-300 transform translate-y-4 opacity-0"
+          style={`transition-delay: ${idx * 60}ms`}
+          data-section={link.section}
+        >
+          <span class="text-accent-1 mr-3 text-sm font-mono">0{idx + 1}.</span>
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <!-- <div class="space-y-4 pb-12 transform translate-y-8 opacity-0 transition-all duration-500 delay-300" id="mobile-menu-footer">
+      <a href="#contacto" class="block w-full py-4 text-center text-sm font-semibold tracking-wider btn-primary cursor-pointer">
+        Empezar un Proyecto
+      </a>
+      <div class="text-center text-xs text-white/40 font-mono">
+        nvega6511@gmail.com
+      </div>
+    </div> -->
+  </div>
+</nav>
+
+<style>
+  /* Premium Active Class Styles */
+  .active-link {
+    background-color: rgba(10, 132, 255, 0.15) !important;
+    color: var(--color-accent-1) !important;
+    box-shadow: inset 0 0 12px rgba(10, 132, 255, 0.1);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+    const mobileFooter = document.getElementById('mobile-menu-footer');
+    
+    // Toggle Mobile Menu
+    function toggleMobileMenu() {
+      const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+      mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
+      
+      if (!isExpanded) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.offsetHeight; // Force reflow
+        mobileMenu.classList.remove('opacity-0');
+        hamburgerIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        
+        mobileLinks.forEach(link => {
+          link.classList.remove('translate-y-4', 'opacity-0');
+        });
+        mobileFooter.classList.remove('translate-y-8', 'opacity-0');
+      } else {
+        mobileMenu.classList.add('opacity-0');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        document.body.style.overflow = '';
+        
+        mobileLinks.forEach(link => {
+          link.classList.add('translate-y-4', 'opacity-0');
+        });
+        mobileFooter.classList.add('translate-y-8', 'opacity-0');
+        
+        setTimeout(() => {
+          mobileMenu.classList.add('hidden');
+        }, 300);
+      }
+    }
+    
+    mobileMenuButton.addEventListener('click', toggleMobileMenu);
+    
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (!mobileMenu.classList.contains('hidden')) {
+          toggleMobileMenu();
+        }
+      });
+    });
+
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Active section indicator
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '-10% 0px -50% 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            if (link.getAttribute('data-section') === id) {
+              navLinks.forEach(l => l.classList.remove('active-link'));
+              link.classList.add('active-link');
+            }
+          });
+          
+          mobileLinks.forEach(link => {
+            if (link.getAttribute('data-section') === id) {
+              mobileLinks.forEach(l => l.classList.remove('text-accent-1', 'font-bold'));
+              link.classList.add('text-accent-1', 'font-bold');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section[id]').forEach((section) => {
+      observer.observe(section);
+    });
+  });
+</script>

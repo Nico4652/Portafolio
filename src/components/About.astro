@@ -1,0 +1,170 @@
+---
+// About me section with animated stats
+---
+
+<section id="sobre-mi" class="py-20 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="space-y-12">
+      <!-- Header -->
+      <div class="text-center opacity-0 transform translate-y-8 transition-all duration-1000 ease-out" id="about-header">
+        <h2 class="text-3xl font-bold text-center gradient-text animated-gradient">
+          Sobre mí
+        </h2>
+        <p class="mt-4 text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
+          Soy un desarrollador orientado principalmente al backend con experiencia creando APIs REST utilizando ASP.NET Core.
+          Me apasiona la arquitectura de software, las buenas prácticas de desarrollo y la construcción de aplicaciones escalables.
+          También trabajo con React, Next.js y React Native para desarrollar interfaces modernas cuando el proyecto lo requiere.
+        </p>
+      </div>
+      
+      <!-- Stats -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Stat 1: Age */}
+        <div class="about-card glass-panel text-center py-10 relative overflow-hidden group transition-all duration-300">
+          <div class="card-glow absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-10">
+            <div class="text-5xl font-black gradient-text animated-gradient tracking-tight" data-target="19" id="stat-age">
+              0
+            </div>
+            <div class="mt-3 text-lg font-semibold text-white/80">años</div>
+            <div class="mt-1 text-xs text-white/40 font-mono tracking-wider uppercase">Edad</div>
+          </div>
+        </div>
+        
+        {/* Stat 2: Projects */}
+        <div class="about-card glass-panel text-center py-10 relative overflow-hidden group transition-all duration-300">
+          <div class="card-glow absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-10">
+            <div class="text-5xl font-black gradient-text animated-gradient tracking-tight" data-target="2" id="stat-projects">
+              0
+            </div>
+            <div class="mt-3 text-lg font-semibold text-white/80">proyectos grandes</div>
+            <div class="mt-1 text-xs text-white/40 font-mono tracking-wider uppercase">Personales</div>
+          </div>
+        </div>
+        
+        {/* Stat 3: ASP.NET Core */}
+        <div class="about-card glass-panel text-center py-10 relative overflow-hidden group transition-all duration-300">
+          <div class="card-glow absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-10">
+            <div class="text-3xl font-extrabold text-white tracking-wide" id="stat-framework">
+              ASP.NET Core
+            </div>
+            <div class="mt-3 text-lg font-semibold text-white/80">Framework</div>
+            <div class="mt-1 text-xs text-white/40 font-mono tracking-wider uppercase">Principal</div>
+          </div>
+        </div>
+        
+        {/* Stat 4: Architecture */}
+        <div class="about-card glass-panel text-center py-10 relative overflow-hidden group transition-all duration-300">
+          <div class="card-glow absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-10">
+            <div class="text-3xl font-extrabold text-white tracking-wide" id="stat-specialty">
+              Arquitectura
+            </div>
+            <div class="mt-3 text-lg font-semibold text-white/80">de Software</div>
+            <div class="mt-1 text-xs text-white/40 font-mono tracking-wider uppercase">Especialidad</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Custom non-AI organic glowing effect */
+  .about-card {
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(1, 10, 30, 0.4);
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
+  }
+  
+  .about-card:hover {
+    border-color: rgba(10, 132, 255, 0.3);
+    transform: translateY(-4px);
+    background: rgba(1, 15, 45, 0.5);
+  }
+
+  .card-glow {
+    background: radial-gradient(
+      180px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(10, 132, 255, 0.15),
+      transparent 80%
+    );
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Dynamic Cursor-Following Glow Effect
+    const cards = document.querySelectorAll('.about-card');
+    cards.forEach(card => {
+      const htmlCard = card as HTMLElement;
+      htmlCard.addEventListener('mousemove', (e) => {
+        const rect = htmlCard.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        htmlCard.style.setProperty('--mouse-x', `${x}px`);
+        htmlCard.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+
+    // Animate header and content entrance
+    const aboutHeader = document.getElementById('about-header');
+    if (aboutHeader) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            aboutHeader.classList.remove('opacity-0', 'translate-y-8');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      observer.observe(aboutHeader);
+    }
+
+    // Number Counting Animation
+    function animateCounters() {
+      const counters = [
+        { id: 'stat-age', target: 19, suffix: '' },
+        { id: 'stat-projects', target: 2, suffix: '+' }
+      ];
+
+      counters.forEach(counterInfo => {
+        const el = document.getElementById(counterInfo.id);
+        if (!el) return;
+        
+        let current = 0;
+        const duration = 1500; // ms
+        const steps = 30;
+        const stepTime = duration / steps;
+        const increment = counterInfo.target / steps;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= counterInfo.target) {
+            el.textContent = `${counterInfo.target}${counterInfo.suffix}`;
+            clearInterval(timer);
+          } else {
+            el.textContent = `${Math.floor(current)}${counterInfo.suffix}`;
+          }
+        }, stepTime);
+      });
+    }
+
+    // Trigger counters on visibility
+    const statsContainer = document.querySelector('#sobre-mi');
+    if (statsContainer) {
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounters();
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      statsObserver.observe(statsContainer);
+    }
+  });
+</script>

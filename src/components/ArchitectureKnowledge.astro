@@ -1,0 +1,251 @@
+---
+// Architecture and knowledge section with concept cards
+---
+
+<section id="arquitectura-y-conocimientos" class="py-20 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="space-y-12">
+      <!-- Header -->
+      <div class="text-center opacity-0 transform translate-y-6 transition-all duration-1000 ease-out" id="arch-header">
+        <h2 class="text-3xl font-bold text-center gradient-text animated-gradient">
+          Arquitectura y Conocimientos
+        </h2>
+        <p class="mt-4 text-lg text-white/60 max-w-2xl mx-auto">
+          Conocimientos sólidos en patrones arquitectónicos y principios de diseño de software que aplico en todos mis proyectos.
+        </p>
+      </div>
+      
+      <!-- Concept cards -->
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" id="arch-grid">
+        {/* Clean Architecture */}
+        <div class="arch-card glass-panel opacity-0 relative overflow-hidden p-8 transition-all duration-300 select-none group" data-delay="0">
+          <div class="card-radial-glow absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="relative z-10 flex flex-col h-full justify-between">
+            <div>
+              <div class="flex items-center space-x-4 mb-5">
+                <div class="w-12 h-12 bg-accent-1/20 rounded-2xl flex items-center justify-center border border-accent-1/30 group-hover:scale-110 transition-transform duration-300">
+                  <svg class="h-6 w-6 text-accent-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c4 0 6.364 2.574 6.364 5.636v3a2 2 0 01-2 2H8a2 2 0 01-2-2v-3C5.636 10.574 8 8 12 8z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-xl text-white tracking-wide">Clean Architecture</h3>
+                </div>
+              </div>
+              <p class="text-sm text-white/60 leading-relaxed">
+                Separación de preocupaciones mediante capas independientes: Entidades, Casos de uso, Adaptadores de interfaz y Frameworks.
+                Las dependencias apuntan hacia el núcleo, haciendo el negocio independiente de frameworks y bases de datos.
+              </p>
+            </div>
+            <div class="mt-6 text-xs font-mono text-accent-1 group-hover:translate-x-2 transition-transform duration-300">Centralized domain →</div>
+          </div>
+        </div>
+        
+        {/* DDD */}
+        <div class="arch-card glass-panel opacity-0 relative overflow-hidden p-8 transition-all duration-300 select-none group" data-delay="150">
+          <div class="card-radial-glow absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="relative z-10 flex flex-col h-full justify-between">
+            <div>
+              <div class="flex items-center space-x-4 mb-5">
+                <div class="w-12 h-12 bg-accent-2/20 rounded-2xl flex items-center justify-center border border-accent-2/30 group-hover:scale-110 transition-transform duration-300">
+                  <svg class="h-6 w-6 text-accent-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-xl text-white tracking-wide">Domain-Driven Design</h3>
+                </div>
+              </div>
+              <p class="text-sm text-white/60 leading-relaxed">
+                Enfoque centrado en el dominio del negocio. Uso de entidades, objetos de valor, agregados, repositorios y servicios de dominio 
+                para modelar correctamente la lógica de negocio compleja utilizando un lenguaje ubicuo.
+              </p>
+            </div>
+            <div class="mt-6 text-xs font-mono text-accent-2 group-hover:translate-x-2 transition-transform duration-300">Ubiquitous Language →</div>
+          </div>
+        </div>
+        
+        {/* CQRS */}
+        <div class="arch-card glass-panel opacity-0 relative overflow-hidden p-8 transition-all duration-300 select-none group" data-delay="300">
+          <div class="card-radial-glow absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="relative z-10 flex flex-col h-full justify-between">
+            <div>
+              <div class="flex items-center space-x-4 mb-5">
+                <div class="w-12 h-12 bg-accent-3/20 rounded-2xl flex items-center justify-center border border-accent-3/30 group-hover:scale-110 transition-transform duration-300">
+                  <svg class="h-6 w-6 text-accent-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h10M11 6h6" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-xl text-white tracking-wide">CQRS</h3>
+                </div>
+              </div>
+              <p class="text-sm text-white/60 leading-relaxed">
+                Separación de responsabilidades entre comandos (escritura) y consultas (lectura). 
+                Mejora el rendimiento general, escalabilidad y seguridad al optimizar cada vía de datos de manera independiente.
+              </p>
+            </div>
+            <div class="mt-6 text-xs font-mono text-accent-3 group-hover:translate-x-2 transition-transform duration-300">Write / Read Segregation →</div>
+          </div>
+        </div>
+        
+        {/* SOLID */}
+        <div class="arch-card glass-panel opacity-0 relative overflow-hidden p-8 transition-all duration-300 select-none group" data-delay="450">
+          <div class="card-radial-glow absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="relative z-10 flex flex-col h-full justify-between">
+            <div>
+              <div class="flex items-center space-x-4 mb-5">
+                <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform duration-300">
+                  <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c4 0 6.364 2.574 6.364 5.636v3a2 2 0 01-2 2H8a2 2 0 01-2-2v-3C5.636 10.574 8 8 12 8z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-xl text-white tracking-wide">Principios SOLID</h3>
+                </div>
+              </div>
+              <p class="text-sm text-white/60 leading-relaxed">
+                Cinco directrices de diseño estructurado que hacen el software comprensible y flexible: 
+                Responsabilidad única, Abierto/cerrado, Sustitución de Liskov, Segregación de interfaz e Inversión de dependencia.
+              </p>
+            </div>
+            <div class="mt-6 text-xs font-mono text-white/80 group-hover:translate-x-2 transition-transform duration-300">Clean Code Standards →</div>
+          </div>
+        </div>
+        
+        {/* Arquitectura en Capas */}
+        <div class="arch-card glass-panel opacity-0 relative overflow-hidden p-8 transition-all duration-300 select-none group" data-delay="600">
+          <div class="card-radial-glow absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="relative z-10 flex flex-col h-full justify-between">
+            <div>
+              <div class="flex items-center space-x-4 mb-5">
+                <div class="w-12 h-12 bg-accent-1/20 rounded-2xl flex items-center justify-center border border-accent-1/20 group-hover:scale-110 transition-transform duration-300">
+                  <svg class="h-6 w-6 text-accent-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-xl text-white tracking-wide">Agreggate Root</h3>
+                </div>
+              </div>
+              <p class="text-sm text-white/60 leading-relaxed">
+                Un punto de acceso único que encapsula y protege la consistencia de un agregado dentro del dominio. 
+                Centraliza las reglas de negocio, controla las modificaciones de las entidades relacionadas 
+                y garantiza que todas las invariantes del agregado se mantengan válidas.
+              </p>
+            </div>
+            <div class="mt-6 text-xs font-mono text-accent-1 group-hover:translate-x-2 transition-transform duration-300">Decoupled Systems →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .arch-card {
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(1, 10, 30, 0.3);
+    will-change: transform;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .arch-card:hover {
+    border-color: rgba(56, 189, 248, 0.25);
+    background: rgba(1, 15, 45, 0.4);
+  }
+
+  .card-radial-glow {
+    background: radial-gradient(
+      240px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(56, 189, 248, 0.12),
+      transparent 80%
+    );
+  }
+
+  /* Clip path sweep entry animation */
+  .sweep-in {
+    animation: diagonalSweep 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes diagonalSweep {
+    from {
+      opacity: 0;
+      clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+      transform: scale(0.96) translateY(20px);
+    }
+    to {
+      opacity: 1;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      transform: scale(1) translateY(0);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('arch-header');
+    const grid = document.getElementById('arch-grid');
+    const cards = document.querySelectorAll('.arch-card');
+
+    // Intersection Observer for entering
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (header) header.classList.remove('opacity-0', 'translate-y-6');
+          
+          cards.forEach(card => {
+            const htmlCard = card as HTMLElement;
+            const delay = htmlCard.getAttribute('data-delay') || '0';
+            setTimeout(() => {
+              htmlCard.classList.add('sweep-in');
+            }, parseInt(delay));
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    if (grid) observer.observe(grid);
+
+    // 3D Tilt + Radial Glow follow script
+    cards.forEach(card => {
+      const htmlCard = card as HTMLElement;
+      
+      htmlCard.addEventListener('mousemove', (e) => {
+        const rect = htmlCard.getBoundingClientRect();
+        
+        // Relative mouse coordinates
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        // Set CSS mouse vars
+        htmlCard.style.setProperty('--mouse-x', `${x}px`);
+        htmlCard.style.setProperty('--mouse-y', `${y}px`);
+        
+        // Dynamic tilt calculation
+        const width = rect.width;
+        const height = rect.height;
+        
+        // Max tilt angles: 6 degrees
+        const tiltX = ((y / height) - 0.5) * -12;
+        const tiltY = ((x / width) - 0.5) * 12;
+        
+        htmlCard.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-4px)`;
+      });
+
+      htmlCard.addEventListener('mouseleave', () => {
+        // Reset tilt smoothly
+        htmlCard.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease, background 0.3s ease';
+        htmlCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0deg)';
+        
+        // Clean up transition after animation to prevent lag
+        setTimeout(() => {
+          htmlCard.style.transition = 'border-color 0.3s ease, background 0.3s ease';
+        }, 500);
+      });
+    });
+  });
+</script>

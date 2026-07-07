@@ -1,0 +1,520 @@
+---
+// Projects section — each project card includes its own interactive mockup showcase
+---
+
+<section id="proyectos" class="py-24 relative overflow-hidden">
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section header -->
+    <div class="mb-20 section-reveal">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="h-px w-8 bg-accent-1 shrink-0"></div>
+        <p class="text-xs font-mono text-accent-1/60 tracking-[0.25em] uppercase">Trabajo personal</p>
+      </div>
+      <h2 class="text-4xl sm:text-5xl font-bold gradient-text animated-gradient">Proyectos</h2>
+      <p class="mt-4 text-white/45 max-w-lg text-sm leading-relaxed">
+        Proyectos donde aplico arquitectura de software, buenas prácticas y patrones de diseño en el ecosistema .NET.
+      </p>
+    </div>
+
+    <!-- ══════════════ PROJECT 1 ══════════════ -->
+    <article class="project-card section-reveal mb-8" style="--reveal-delay: 80ms">
+      <div class="project-inner glass-panel rounded-2xl border border-white/8 overflow-hidden">
+
+        <div class="grid lg:grid-cols-[1fr_1.15fr]">
+
+          <!-- ── Left: info ── -->
+          <div class="p-7 sm:p-9 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-white/6">
+
+            <div class="flex items-center gap-3">
+              <span class="text-[10px] font-mono tracking-[0.3em] text-accent-1/50 uppercase shrink-0">Proyecto 01</span>
+              <div class="h-px flex-1 bg-linear-to-r from-accent-1/25 to-transparent"></div>
+              <span class="live-badge">
+                <span class="live-dot"></span>
+                ASP.NET Core
+              </span>
+            </div>
+
+            <div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white leading-snug mb-3">
+                Sistema de Gestión<br />para Emprendimiento
+              </h3>
+              <p class="text-white/50 text-sm leading-relaxed">
+                Backend desarrollado con ASP.NET Core siguiendo buenas prácticas de arquitectura y
+                diseño. Sistema completo que incluye control de inventario, ventas, gastos y reportes estadísticos.
+              </p>
+            </div>
+
+            <!-- Feature chips -->
+            <div class="flex flex-wrap gap-2">
+              <span class="feat-chip">API REST documentada</span>
+              <span class="feat-chip">ORM Modernas</span>
+              <span class="feat-chip">Middlewares</span>
+              <span class="feat-chip">Validaciones multinivel</span>
+            </div>
+
+            <!-- Tech stack -->
+            <div class="space-y-2">
+              <p class="text-[9px] text-white/25 font-mono tracking-[0.25em] uppercase">Stack</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="stag blue">ASP.NET Core</span>
+                <span class="stag blue">C#</span>
+                <span class="stag sky">Entity Framework</span>
+                <span class="stag sky">Dapper</span>
+                <span class="stag indigo">SQL Server</span>
+                <span class="stag indigo">Clean Architecture</span>
+                <span class="stag blue">MediatR</span>
+                <span class="stag blue">FluentValidation</span>
+                <span class="stag sky">Serilog</span>
+                <span class="stag sky">Redis cache</span>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="flex gap-3 pt-1 mt-auto">
+              <a
+                href="https://github.com/Nico4652/Drink-Sessions"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary flex items-center gap-2 text-sm"
+              >
+                <svg class="h-4 w-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+                Ver código en GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- ── Right: 2×2 interactive mockup grid ── -->
+          <div class="p-5 sm:p-6">
+            <div class="grid grid-cols-2 gap-3 h-full">
+
+              <!-- Mockup 1: Dashboard -->
+              <div class="mcard group" style="--mc-delay: 0ms">
+                <div class="mcard-hd">
+                  <span class="text-[12px] font-mono text-white/50">dashboard.svg</span>
+                  <div class="flex gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent-1/50"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent-2/50"></span>
+                  </div>
+                </div>
+                <div class="flex items-end gap-1.5 flex-1 px-1 pb-1">
+                  <div class="cbar" style="--ch: 40%; --ch-h: 62%; --cc: var(--color-accent-1); --cd: 0ms"></div>
+                  <div class="cbar" style="--ch: 65%; --ch-h: 83%; --cc: var(--color-accent-2); --cd: 55ms"></div>
+                  <div class="cbar" style="--ch: 48%; --ch-h: 68%; --cc: var(--color-accent-3); --cd: 110ms"></div>
+                  <div class="cbar" style="--ch: 80%; --ch-h: 95%; --cc: var(--color-accent-1); --cd: 165ms"></div>
+                  <div class="cbar" style="--ch: 33%; --ch-h: 55%; --cc: var(--color-accent-2); --cd: 220ms"></div>
+                  <div class="cbar" style="--ch: 93%; --ch-h: 100%; --cc: var(--color-accent-3); --cd: 55ms"></div>
+                </div>
+                <div class="mcard-ft">
+                  <p class="text-[10px] font-semibold text-white/80">Dashboard Vista Web</p>
+                  <p class="text-[9px] text-white/50">Reportes y estadísticas</p>
+                </div>
+              </div>
+
+              <!-- Mockup 2: API REST (interactive) -->
+              <div class="mcard group font-mono" style="--mc-delay: 90ms">
+                <div class="mcard-hd">
+                  <span class="text-[12px] text-white/50">RestAPI Client</span>
+                  <span class="text-[10px] text-green-400/80 tracking-tight">200 OK</span>
+                </div>
+                <div class="flex-1 flex flex-col gap-1.5 py-1">
+                  <div class="flex items-center justify-between bg-white/4 px-2 py-1 rounded border border-white/8">
+                    <span class="text-[10px] text-accent-2">[GET] /api/sales</span>
+                    <button
+                      id="api-send-btn"
+                      class="text-[10px] bg-accent-1 hover:bg-accent-2 text-white px-1.5 py-0.5 rounded transition-all duration-200 cursor-pointer active:scale-90 select-none"
+                    >Send</button>
+                  </div>
+                  <div id="api-output" class="flex-1 bg-black/30 rounded border border-white/5 p-1.5 text-[10px] text-white/45 overflow-hidden leading-relaxed whitespace-pre">// Click Send to query</div>
+                </div>
+                <div class="mcard-ft">
+                  <p class="text-[10px] font-semibold text-white/80">API REST</p>
+                  <p class="text-[9px] text-white/50">ASP.NET Core endpoints</p>
+                </div>
+              </div>
+
+              <!-- Mockup 3: Mobile App -->
+              <div class="mcard group" style="--mc-delay: 180ms">
+                <div class="mcard-hd">
+                  <span class="text-[12px] font-mono text-white/40">mobile.json</span>
+                  <span class="text-[10px] text-accent-3/80 font-mono">Expo Go</span>
+                </div>
+                <div class="flex-1 flex flex-col gap-1.5 justify-center">
+                  <div class="drow"><span>Stock Productos</span><span class="text-accent-3 font-bold">120 u.</span></div>
+                  <div class="drow"><span>Ganancia Neta</span><span class="text-green-400 font-bold">$1,540</span></div>
+                  <div class="drow"><span>Ventas del Día</span><span class="text-accent-1 font-bold">14</span></div>
+                </div>
+                <div class="mcard-ft">
+                  <p class="text-[10px] font-semibold text-white/80">App Móvil</p>
+                  <p class="text-[9px] text-white/50">React Native · Expo</p>
+                </div>
+              </div>
+
+              <!-- Mockup 4: Clean Code -->
+              <div class="mcard group font-mono" style="--mc-delay: 270ms">
+                <div class="mcard-hd">
+                  <span class="text-[12px] text-white/40">SalesController.cs</span>
+                  <span class="text-[10px] text-purple-500">C#</span>
+                </div>
+                <div class="flex-1 flex flex-col justify-center text-[10px] space-y-0.5 leading-snug">
+                  <p class="text-white/35">// Guardar venta</p>
+                  <p><span class="text-accent-2">public async</span> <span class="text-accent-3">Task&lt;IActionResult&gt;</span></p>
+                  <p class="pl-2 text-white">CreateSales(<span class="text-accent-1">SaleDto</span> dto)</p>
+                  <p>&#123;</p>
+                  <p class="pl-2"><span class="text-accent-2">var</span> r = <span class="text-accent-2">await</span> _svc.Add(dto);</p>
+                  <p class="pl-2"><span class="text-accent-2">return</span> <span class="text-accent-3">Ok</span>(r);</p>
+                  <p>&#125;</p>
+                </div>
+                <div class="mcard-ft">
+                  <p class="text-[10px] font-semibold text-white/80">Código Limpio</p>
+                  <p class="text-[9px] text-white/50">SOLID · Clean Code</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════════ PROJECT 2 ══════════════ -->
+    <article class="project-card section-reveal" style="--reveal-delay: 180ms">
+      <div class="project-inner glass-panel rounded-2xl border border-white/8 overflow-hidden">
+
+        <div class="grid lg:grid-cols-[1fr_1.15fr]">
+
+          <!-- ── Left: info ── -->
+          <div class="p-7 sm:p-9 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-white/6">
+
+            <div class="flex items-center gap-3">
+              <span class="text-[10px] font-mono tracking-[0.3em] text-accent-3/50 uppercase shrink-0">Proyecto 02</span>
+              <div class="h-px flex-1 bg-linear-to-r from-accent-3/25 to-transparent"></div>
+              <span class="live-badge" style="--lb-color: var(--color-accent-3)">
+                <span class="live-dot" style="background: var(--color-accent-3)"></span>
+                Roslyn  .NET
+              </span>
+            </div>
+
+            <div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white leading-snug mb-3">
+                Clean Architecture Analyzer<br />para una arquitectura mantenible
+              </h3>
+              <p class="text-white/50 text-sm leading-relaxed">
+                Herramienta de análisis estático que inspecciona la estructura del proyecto, verificando restricciones entre capas, principios SOLID, Aggregate Roots e invariantes del dominio para prevenir desviaciones arquitectónicas.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-1.5">
+              <span class="stag indigo">Roslyn</span>
+              <span class="stag sky">Symbol</span>
+              <span class="stag blue">Sintax</span>
+              <span class="stag indigo">Semantic Method</span>
+            </div>
+
+            <!-- <div class="flex gap-3 pt-1 mt-auto">
+              <span class="btn-primary flex items-center gap-2 text-sm opacity-50 cursor-not-allowed select-none">
+                <svg class="h-4 w-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+                Próximamente
+              </span>
+            </div> -->
+
+             <div class="flex gap-3 pt-1 mt-auto">
+              <a
+                href="https://github.com/Nico4652/CleanArchitectureAnalyzer"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary flex items-center gap-2 text-sm"
+              >
+                <svg class="h-4 w-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+                Ver código en GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- ── Right: stats mockup ── -->
+          <div class="p-5 sm:p-6 flex items-center justify-center">
+            <div class="w-full mcard font-mono" style="min-height: 240px; --mc-delay: 0ms">
+              <div class="mcard-hd">
+                <span class="text-[12px] text-white/40">project_stats.json</span>
+                <div class="flex items-center gap-1.5 text-[10px] text-white">
+                  <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse shrink-0"></span>
+                  all tests passing
+                </div>
+              </div>
+
+              <div class="flex-1 flex flex-col gap-5 py-3">
+                <!-- Stat bar 1 -->
+                <div>
+                  <div class="flex justify-between text-[12px] mb-1.5">
+                    <span class="text-white/55">Tests pasados</span>
+                    <span class="text-green-400 font-bold">8 / 8</span>
+                  </div>
+                  <div class="h-1.5 w-full bg-white/[0.07] rounded-full overflow-hidden">
+                    <div class="sbar h-full rounded-full bg-linear-to-r from-green-500 to-green-400" style="--sw: 100%"></div>
+                  </div>
+                </div>
+                <!-- Stat bar 2 -->
+                <div>
+                  <div class="flex justify-between text-[12px] mb-1.5">
+                    <span class="text-white/55">Analyzadores completos</span>
+                    <span class="text-accent-1 font-bold">3 / 5</span>
+                  </div>
+                  <div class="h-1.5 w-full bg-white/7 rounded-full overflow-hidden">
+                    <div class="sbar h-full rounded-full bg-linear-to-r from-accent-1 to-accent-2" style="--sw: 60%"></div>
+                  </div>
+                </div>
+                <!-- Stat bar 3 -->
+                <div>
+                  <div class="flex justify-between text-[12px] mb-1.5">
+                    <span class="text-white/55">Reglas completas</span>
+                    <span class="text-accent-3 font-bold">70 / 71</span>
+                  </div>
+                  <div class="h-1.5 w-full bg-white/[0.07] rounded-full overflow-hidden">
+                    <div class="sbar h-full rounded-full bg-linear-to-r from-accent-3 to-accent-2" style="--sw: 98.59%"></div>
+                  </div>
+                </div>
+
+                <!-- Mini code snippet -->
+                <div class="text-[12px] text-white/40 space-y-0.5 border-t border-white/5 pt-3">
+                  <p><span class="text-accent-2">const</span> stack = [<span class="text-accent-3">"Roslyn"</span>, <span class="text-accent-3">".Net"</span>, <span class="text-accent-3">"xUnit"</span>]</p>
+                  <p><span class="text-accent-2">const</span> pattern = [<span class="text-accent-3">"Clean Architecture"</span><span class="text-accent-3">"DDD"</span>, <span class="text-accent-3">"SOLID"</span>, <span class="text-accent-3">"Agreggate Root"</span>]</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<style>
+  /* ── Section reveal ── */
+  .section-reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    transition:
+      opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms);
+  }
+  .section-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Project card tilt host ── */
+  .project-card {
+    will-change: transform;
+  }
+  .project-inner {
+    background: rgba(1, 30, 66, 0.35) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transition: 
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+  }
+  .project-card:hover .project-inner {
+    border-color: rgba(10, 132, 255, 0.25);
+    box-shadow:
+      0 16px 40px rgba(0, 2, 20, 0.65),
+      0 0 24px rgba(10, 132, 255, 0.06);
+  }
+
+  /* ── Live badge ── */
+  .live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 9px;
+    font-family: var(--font-mono);
+    color: color-mix(in srgb, var(--lb-color, var(--color-accent-1)) 70%, white);
+    letter-spacing: 0.05em;
+  }
+  .live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent-1);
+    animation: livePulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    flex-shrink: 0;
+  }
+  @keyframes livePulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.4; transform: scale(0.75); }
+  }
+
+  /* ── Mini mockup cards ── */
+  .mcard {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 12px;
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.07);
+    background: rgba(1, 30, 66, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    min-height: 160px;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    transition:
+      transform  0.5s cubic-bezier(0.23, 1, 0.32, 1) var(--mc-delay, 0ms),
+      border-color 0.35s ease,
+      box-shadow   0.45s ease;
+  }
+  .mcard::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10, 132, 255, 0.04) 0%, transparent 55%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+  .mcard:hover {
+    transform: translateY(-4px) scale(1.015);
+    border-color: rgba(10, 132, 255, 0.22);
+    box-shadow: 0 10px 28px rgba(0, 2, 20, 0.45), 0 0 24px rgba(10, 132, 255, 0.07);
+  }
+  .mcard:hover::before { opacity: 1; }
+
+  .mcard-hd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    flex-shrink: 0;
+  }
+  .mcard-ft {
+    text-align: center;
+    padding-top: 4px;
+    flex-shrink: 0;
+  }
+
+  /* ── Chart bars ── */
+  .cbar {
+    flex: 1;
+    height: var(--ch);
+    background-color: var(--cc);
+    border-radius: 3px 3px 0 0;
+    opacity: 0.35;
+    transition:
+      height   0.65s cubic-bezier(0.34, 1.56, 0.64, 1) var(--cd, 0ms),
+      opacity  0.35s ease;
+  }
+  .mcard:hover .cbar {
+    height: var(--ch-h) !important;
+    opacity: 0.8;
+  }
+
+  /* ── Data rows (mobile mockup) ── */
+  .drow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: 9px;
+    color: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+
+  /* ── Stack tags ── */
+  .stag {
+    font-size: 10px;
+    font-family: var(--font-mono);
+    padding: 3px 10px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .stag.blue   { background: rgba(10,132,255,0.10); color: var(--color-accent-1); border: 1px solid rgba(10,132,255,0.20); }
+  .stag.sky    { background: rgba(56,189,248,0.08); color: var(--color-accent-2); border: 1px solid rgba(56,189,248,0.18); }
+  .stag.indigo { background: rgba(96,165,250,0.08); color: var(--color-accent-3); border: 1px solid rgba(96,165,250,0.18); }
+
+  /* ── Feature chips ── */
+  .feat-chip {
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* ── Stat bars ── */
+  .sbar {
+    width: 0%;
+    transition: width 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .sbar.animated {
+    width: var(--sw) !important;
+  }
+</style>
+
+
+<script>
+  // ── Reveal on scroll ──
+  const revealEls = document.querySelectorAll<HTMLElement>('.section-reveal');
+  const revealObs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.06, rootMargin: '0px 0px -30px 0px' }
+  );
+  revealEls.forEach(el => revealObs.observe(el));
+
+  // ── Stat bars animate on scroll ──
+  const statBars = document.querySelectorAll<HTMLElement>('.sbar');
+  const statObs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          statObs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+  statBars.forEach(b => statObs.observe(b));
+
+  // ── Interactive API button ──
+  const apiBtn = document.getElementById('api-send-btn') as HTMLButtonElement | null;
+  const apiOut = document.getElementById('api-output') as HTMLElement | null;
+  if (apiBtn && apiOut) {
+    apiBtn.addEventListener('click', () => {
+      apiOut.innerHTML = '<span style="color:rgba(255,255,255,0.3)">Fetching...</span>';
+      apiBtn.disabled = true;
+      setTimeout(() => {
+        apiOut.innerHTML =
+          `<span style="color:#4ade80">{\n  "id": 4652,\n  "sale": "Venta Stock",\n  "profit": 1540.20,\n  "stockUpdated": true,\n  "ok": true\n}</span>`;
+        apiBtn.disabled = false;
+      }, 580);
+    });
+  }
+
+
+</script>
